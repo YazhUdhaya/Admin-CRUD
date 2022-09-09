@@ -26,11 +26,7 @@ function Sidebar() {
                 <span>User Tables</span></Link>
         </li>
 
-        <li className="nav-item">
-            <Link className="nav-link" to='/product-tables'>
-                <i className="fas fa-fw fa-table"></i>
-                <span>Product Tables</span></Link>
-        </li>
+       
 
         
         <hr className="sidebar-divider d-none d-md-block"/>
