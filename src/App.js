@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes ,Route} from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import UserTables from './components/UserTables';
+import ViewTable from './components/ViewTable';
+import CreateTable from './components/CreateTable';
+import UpdateTable from './components/UpdateTable';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <BrowserRouter>
+   <div id='wrapper'>
+     <Sidebar/>
+     <div id="content-wrapper" className="d-flex flex-column">
+      <div id="content">
+     <Navbar/> 
+     <Routes>
+      <Route path='/user-tables' element={<UserTables/>}/>
+      <Route path='/user-tables/:id' element={<ViewTable/>}/>
+      <Route path='/create-userdata' element={<CreateTable/>}/>
+      <Route path='/update-userdata/:id' element={<UpdateTable/>}/>
+      
+     </Routes>
+     </div>
+     </div>
     </div>
+   </BrowserRouter>
   );
 }
 
